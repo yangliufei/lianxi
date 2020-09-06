@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/close.png" alt="" id="eye">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+    <script>
+        var eye = document.querySelector('#eye')
+        var pwd = document.querySelector('#pwd')
+        //当遇到要切换的时候一定要用flag思想！！！！！！！！阀门思想
+        var flag = 1
+        eye.onclick = function () {
+            if (flag) {
+                eye.src = 'images/open.png'
+                pwd.type = 'text'
+                flag = 0
+            } else {
+                eye.src = 'images/close.png'
+                pwd.type = 'password'
+                flag = 1
+            }
+            // if (eye.src == 'images/close.png') {
+            //     eye.src = 'images/open.png'
+            //     pwd.type = 'text'
+            // }
+            // if (eye.src == 'images/open.png') {
+            //     eye.src = 'images/close.png'
+            //     pwd.type = 'password'
+            // }
+
+        }
+        // if (pwd.type == "password") {
+        //     eye.onclick = function () {
+        //         eye.src = 'images/open.png'
+        //         pwd.type = 'text'
+        //     }
+        // }else if(pwd.type == "text") {
+        //     eye.onclick = function () {
+        //         eye.src = 'images/open.png'
+        //         pwd.type = 'text'
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>
